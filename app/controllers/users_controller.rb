@@ -7,6 +7,8 @@ class UsersController < ProtectedController
   def signup
     user = User.create(user_creds)
     if user.valid?
+      @book_count = 0
+      @reader_status = 'Amature'
       render json: user, status: :created
     else
       render json: user.errors, status: :bad_request
@@ -50,7 +52,8 @@ class UsersController < ProtectedController
 
   def user_creds
     params.require(:credentials)
-          .permit(:email, :password, :password_confirmation)
+          .permit(:email, :password, :password_confirmation,
+                  :give_name, :surname, :dob, :book_count, :reader_status)
   end
 
   def pw_creds
