@@ -4,6 +4,6 @@ curl --include --request POST "http://localhost:4741/books" \
     "books" : {
       "title" : "'"${TITLE}"'",
       "author" : "'"${AUTHOR}"'",
-      "rating" : "'"${RATE}"'"
+      "rating" : "'"${RATING}"'"
     }
   }'
