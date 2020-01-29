@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class BooksController < ApplicationController
+class BooksController < OpenReadController
   before_action :set_book, only: %i[show update destroy]
 
   # GET /books
@@ -49,6 +49,6 @@ class BooksController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def book_params
-    params.require(:book).permit(:title, :author, :rating)
+    params.require(:book).permit(:title, :author, :rating, :user_id)
   end
 end
