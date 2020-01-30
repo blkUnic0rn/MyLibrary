@@ -5,7 +5,7 @@ class BooksController < OpenReadController
 
   # GET /books
   def index
-    @books = Book.all
+    @books = current_user.books.all
 
     render json: @books
   end
