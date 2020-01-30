@@ -49,6 +49,6 @@ class BooksController < OpenReadController
 
   # Only allow a trusted parameter "white list" through.
   def book_params
-    params.require(:book).permit(:title, :author, :rating, :user_id)
+    params.require(:book).permit(:title, :author, :rating, :review, :user_id)
   end
 end
