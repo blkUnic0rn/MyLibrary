@@ -3,4 +3,6 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :email, :given_name,
              :surname, :dob, :book_count, :reader_status
+
+  has_many :books
 end
