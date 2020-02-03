@@ -17,7 +17,8 @@ class FavoritesController < ProtectedController
 
   # POST /favorites
   def create
-    @favorite = current_user.favorites.build(favorite_params)
+    @favorite = current_user.favorites.find(params[:favorite_id]
+                                      .favorites.build(favorite_params))
 
     if @favorite.save
       render json: @favorite, status: :created, location: @favorite
@@ -44,7 +45,8 @@ class FavoritesController < ProtectedController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_favorite
-    @favorite = current_user.favorites.find(params[:id])
+    @favorite = current_user.favorites.find(params[:favorite_id]
+                                            .favorites.find(params[:id]))
   end
 
   # Only allow a trusted parameter "white list" through.
