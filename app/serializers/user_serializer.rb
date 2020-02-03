@@ -5,4 +5,5 @@ class UserSerializer < ActiveModel::Serializer
              :surname, :dob, :book_count, :reader_status
 
   has_many :books
+  has_many :favorites
 end
