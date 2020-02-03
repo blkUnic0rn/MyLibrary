@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class BooksController < OpenReadController
+class BooksController < ProtectedController
   before_action :set_book, only: %i[show update destroy]
 
   # GET /books
