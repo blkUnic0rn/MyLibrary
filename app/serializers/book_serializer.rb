@@ -2,7 +2,7 @@
 
 class BookSerializer < ActiveModel::Serializer
   attributes :id, :title, :author, :rating, :review, :editable
-  has_many :users, through: :favorites
+  has_one :user
   has_many :favorites
 
   def editable

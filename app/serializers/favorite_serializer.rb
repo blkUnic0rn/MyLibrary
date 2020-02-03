@@ -1,10 +1,10 @@
 class FavoriteSerializer < ActiveModel::Serializer
   attributes :id, :editable
 
-  has_one :user
-  has_one :book
+  has_one :favbook
+  has_one :bookfav
 
   def editable
-    scope == object.favorite.user
+    scope == object.favorite.favbook
   end
 end
