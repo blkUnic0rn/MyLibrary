@@ -4,6 +4,6 @@ class UserSerializer < ActiveModel::Serializer
   attributes :id, :email, :given_name,
              :surname, :dob, :book_count, :reader_status
 
-  has_many :books
-  # has_many :favorites
+  has_many :books, through: :favorites
+  has_many :favorites
 end
