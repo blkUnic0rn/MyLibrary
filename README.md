@@ -45,4 +45,4 @@ I would eventually like to add the following abilities to my project:
 
 ## Images
 ### Wireframes:
-![ERD image 1](./public/ERD-Version1.jpeg)
+ERD - https://docs.google.com/document/d/1u-Z321tX8smuBR1xMqQvf_03ZJ9ksgBMb2jKHAxcnCo/edit?usp=sharing)
