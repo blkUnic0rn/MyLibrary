@@ -7,8 +7,6 @@ class UsersController < ProtectedController
   def signup
     user = User.create(user_creds)
     if user.valid?
-      @book_count = 0
-      @reader_status = 'Amature'
       render json: user, status: :created
     else
       render json: user.errors, status: :bad_request

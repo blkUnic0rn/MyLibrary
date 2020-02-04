@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :bookfavs,
            through: :favorites,
            source: :bookfavs
-
 end
