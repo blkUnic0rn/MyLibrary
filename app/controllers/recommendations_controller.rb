@@ -44,7 +44,7 @@ class RecommendationsController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recommendation
-    @recommendation = Recommendation.find(params[:id])
+    @recommendation = current_user.recommendations.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
