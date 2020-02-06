@@ -13,11 +13,14 @@ require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', '100_books.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+user = User.create(email:'admin@kayla', password: 'kayla',
+                                        password_confirmation:'kayla')
+
 csv.each do |row|
-  t = Recommendation.new
-  t.title = row['title']
-  t.author = row['author']
-  t.save
+  t = Recommendation.create(title: row['title'], author: row['author'], user_id: user.id)
+  # t.title = row['title']
+  # t.author = row['author']
+  # t.save
   puts "#{t.title}, #{t.author}"
 end
 puts "there are now #{Recommendation.count} rows in the table"

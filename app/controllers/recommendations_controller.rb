@@ -1,23 +1,24 @@
 # frozen_string_literal: true
 
 class RecommendationsController < OpenReadController
-  before_action :set_recommendation, only: %i[show update destroy]
+  before_action :set_recommendation, only: %i[update destroy]
 
   # GET /recommendations
   def index
-    @recommendations = current_user.recommendations.all
+    @recommendations = Recommendation.all
 
     render json: @recommendations
   end
 
   # GET /recommendations/1
   def show
+    @recommendation = Recommendation.find(params[:id])
     render json: @recommendation
   end
 
   # POST /recommendations
   def create
-    @recommendation = Recommendation.new(recommendation_params)
+    @recommendation = current_user.recommendations.build(recommendation_params)
 
     if @recommendation.save
       render json: @recommendation, status: :created, location: @recommendation
