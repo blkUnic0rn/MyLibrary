@@ -51,7 +51,7 @@ class UsersController < ProtectedController
   def user_creds
     params.require(:credentials)
           .permit(:email, :password, :password_confirmation,
-                  :give_name, :surname, :dob)
+                  :given_name, :surname, :dob)
   end
 
   def pw_creds
